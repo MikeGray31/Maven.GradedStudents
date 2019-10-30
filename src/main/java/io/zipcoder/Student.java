@@ -43,13 +43,14 @@ public class Student {
     }
 
     public String toString(){
-        String fullInfo = String.format("Student name: %s %s\n" +
-                                        "> Average Score: %d\n" +
-                                        "> %s",
-                                        this.firstName,
-                                        this.lastName,
-                                        this.getAverageExamScore(this.examScores),
-                                        this.getExamScores(this.examScores)) ;
+        String fullInfo = "" + this.getAverageExamScore(this.examScores);
+//        String fullInfo = String.format("Student name: %s %s\n" +
+//                                        "> Average Score: %d\n" +
+//                                        "> %s",
+//                                        this.firstName,
+//                                        this.lastName,
+//                                        this.getAverageExamScore(this.examScores),
+//                                        this.getExamScores(this.examScores)) ;
         return fullInfo;
     }
 
