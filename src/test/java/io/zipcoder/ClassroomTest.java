@@ -39,10 +39,15 @@ public class ClassroomTest {
     public void removeStudentTest() {
         ArrayList<Double> s1Scores = new ArrayList<Double>(Arrays.asList(100., 150.));
         Student newGuy = new Student("Mike", "Gray", s1Scores);
-        Student[] students = {newGuy};
+        Student s1 = new Student("student", "one", s1Scores);
+        Student s2 = new Student("student", "two", s1Scores);
+        Student s3 = new Student("student", "three", s1Scores);
+
+        Student[] students = {newGuy, s1, s2, s3};
         Classroom classroom = new Classroom(students);
         classroom.removeStudent("Mike","Gray");
-        Student[] expected = {null};
+
+        Student[] expected = {s1, s2, s3, null};
         Student[] actual = classroom.getStudents();
         Assert.assertArrayEquals(expected,actual);
     }

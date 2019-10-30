@@ -40,11 +40,17 @@ public class Classroom {
     }
 
     public void removeStudent(String firstName, String lastName){
-        for(int i = 0; i < this.students.length; i++){
+        boolean removed = false;
+        for(int i = 0; i < this.students.length - 1; i++){
             if(this.students[i].getFirstName() == firstName && this.students[i].getLastName() == lastName){
-                this.students[i] = null;
+                removed = true;
+            }
+            if(removed){
+                this.students[i] = this.students[i + 1];
             }
         }
+        this.students[this.students.length - 1] = null;
+
     }
 
     public Student[] getStudentsByScore(){
