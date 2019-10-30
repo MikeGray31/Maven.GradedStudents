@@ -76,10 +76,10 @@ public class Classroom {
 
         for(Student s: ordered){
             int finalScore = s.getAverageExamScore(s.examScores);
-            if(finalScore >= percentile10){
+            if(finalScore > percentile10){
                 map.put(s, 'A');
             }
-            else if(finalScore < percentile10 && finalScore > percentile30){
+            else if(finalScore <= percentile10 && finalScore > percentile30){
                 map.put(s, 'B');
             }
             else if(finalScore <=  percentile30 && finalScore >= percentile50){
